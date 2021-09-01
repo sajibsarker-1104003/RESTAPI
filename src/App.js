@@ -24,15 +24,23 @@ class App extends Component {
 
 
     //Submitted Data to Server
-    axios.post('http://localhost:3000/dishes',{
+  //   axios.post('http://localhost:3000/dishes',{
       
-      "name": "Sankar Sarker",
-      "age": "25"
-  }
-    )
-    .then(response=>response.data)
-    .then(data=>console.log(data))
-    .catch(error=>console.log(error.message));
+  //     "name": "Sankar Sarker",
+  //     "age": "25"
+  // }
+  //   )
+  //   .then(response=>response.data)
+  //   .then(data=>console.log(data))
+
+  //Edit the Information
+
+  // axios.put('http://localhost:3000/dishes/5',{name:"Pranto Sarker",age:"25"})
+  // .then(response=>response.data)
+  // .then(data=>console.log(data))
+
+  //Delete the
+    
     
 
 
