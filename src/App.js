@@ -4,6 +4,11 @@ import './App.css';
 import axios from 'axios';
 
 class App extends Component {
+state={
+  dishes:null,
+  errMess:null
+}
+
   componentDidMount() {
     //Using fetch api techniques
     // fetch('https://jsonplaceholder.typicode.com/posts')
@@ -40,14 +45,27 @@ class App extends Component {
   // .then(data=>console.log(data))
 
   //Delete Information
-  axios.delete('http://localhost:3000/dishes/3')
+  // axios.delete('http://localhost:3000/dishes/3')
+  // .then(response=>response.data)
+  // .then(data=>console.log(data))
+
+  //Handling Response Using State
+  axios.get('http://localhost:3000/dishes')
   .then(response=>response.data)
-  .then(data=>console.log(data))
-    
-    
+  .then(data=>{
+    this.setState({
+      dishes:data
+    })
+  })
+      .catch(error => {
+        this.setState({
+          errMess: error.message
+        })
+      });
 
-
-
+  }
+  componentDidUpdate(){
+    console.log("Update:",this.state);
   }
   render() {
     return (
