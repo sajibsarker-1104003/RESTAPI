@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import fetch from 'cross-fetch';
+//import fetch from 'cross-fetch';
 import axios from 'axios';
 
 class App extends Component {
@@ -12,9 +12,30 @@ class App extends Component {
 
     //Using axios techniques
 
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then(response => response.data)
-      .then(data => console.log(data));
+    // axios.get('http://localhost:3001/dishes')
+    //   .then(response => response.data)
+    //   .then(data => console.log(data));
+
+    //Error Handle
+    // axios.get('http://localhost:3000/dishes')
+    // .then(response=>response.data)
+    // .then(data=>console.log(data))
+    // .catch(error=>console.log(error.message));
+
+
+    //Submitted Data to Server
+    axios.post('http://localhost:3000/dishes',{
+      
+      "name": "Sankar Sarker",
+      "age": "25"
+  }
+    )
+    .then(response=>response.data)
+    .then(data=>console.log(data))
+    .catch(error=>console.log(error.message));
+    
+
+
 
   }
   render() {
