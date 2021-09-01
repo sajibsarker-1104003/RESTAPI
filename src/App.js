@@ -39,7 +39,10 @@ class App extends Component {
   // .then(response=>response.data)
   // .then(data=>console.log(data))
 
-  //Delete the
+  //Delete Information
+  axios.delete('http://localhost:3000/dishes/3')
+  .then(response=>response.data)
+  .then(data=>console.log(data))
     
     
 
